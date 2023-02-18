@@ -19,6 +19,7 @@
 %%
 -module(group).
 
+
 %% A group leader process for user io.
 
 -export([start/2, start/3, whereis_shell/0, server/4]).
@@ -370,7 +371,7 @@ expand_encoding([H|T]) ->
 setopts(Opts0,Drv,Buf) ->
     Opts = proplists:unfold(
 	     proplists:substitute_negations(
-	       [{list,binary}], 
+	       [{list,binary}],
 	       expand_encoding(Opts0))),
     case check_valid_opts(Opts) of
 	true ->
@@ -844,7 +845,7 @@ edit_line([Char|Cs],Chars) ->
 
 remainder_after_nl("") -> done;
 remainder_after_nl(Cs) -> Cs.
-    
+
 
 
 get_line_timeout(blink) -> 1000;
